@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Right Click Screen Capture",
+  "version": "1.0",
+  "description": "Capture screenshots directly from the browser right-click menu.",
+
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "downloads",
+    "activeTab"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  }
+}
