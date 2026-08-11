@@ -1,19 +1,25 @@
 {
   "manifest_version": 3,
   "name": "RightSnip",
-  "version": "0.2",
+  "version": "0.3",
   "description": "Capture screenshots directly from the browser's right-click context menu.",
 
   "permissions": [
     "contextMenus",
     "tabs",
     "downloads",
+    "downloads.ui",
     "activeTab",
-    "scripting"
+    "scripting",
+    "storage"
   ],
 
   "background": {
     "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html"
   },
 
   "icons": {
