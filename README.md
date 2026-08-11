@@ -1,122 +1,74 @@
-\# SnipShot
+# RightSnip
 
+RightSnip is a lightweight Chrome extension that lets users capture screenshots directly from the browser's right-click context menu.
 
-
-SnipShot is a lightweight Chrome extension that allows users to capture screenshots directly from the browser's right-click context menu.
-
-
-
-\## Why SnipShot?
-
+## Why RightSnip?
 Traditional screenshot tools usually require keyboard shortcuts or opening a separate application.
 
+RightSnip brings screenshot controls directly into the browser's right-click workflow.
 
+## Current Features
 
-SnipShot brings screenshot controls directly into the browser's right-click menu, making screen capture faster and easier to access while browsing.
+### v0.1 - Initial MVP
+- Added screenshot capture to the browser right-click menu
+- Captures the currently visible browser window
+- Saves screenshots automatically as PNG files
+- Generates timestamped filenames
 
+### v0.2 - Capture Modes and Clipboard
+- Renamed the original capture option to `Capture Window`
+- Added `Drag to Capture`
+- Drag over a specific area of a webpage and capture only that region
+- Automatically crops selected screenshots
+- Saves screenshots inside `Downloads/RightSnip/`
+- Automatically copies the latest screenshot to the system clipboard
+- Added RightSnip branding and extension icon
 
+## Capture Modes
 
-\## Current Features
+### Capture Window
+Right-click on a webpage and choose `Capture Window`.
 
+RightSnip captures the visible browser area, saves it as a PNG, and copies it to the clipboard.
 
+### Drag to Capture
+Right-click on a webpage and choose `Drag to Capture`.
 
-\### v0.1 - Initial MVP
+The page enters selection mode. Drag over the area you want and release the mouse.
 
-\- Right-click screenshot capture
+RightSnip crops that area, saves it as a PNG, and copies it to the clipboard.
 
-\- Captures the currently visible browser window
+## Screenshot Storage
+Screenshots are automatically saved inside:
 
-\- Automatically saves screenshots as PNG files
+`Downloads/RightSnip/`
 
-\- Automatically generates timestamped filenames
+Example filenames:
 
+`rightsnip-window-2026-08-11-16-30-20.png`
 
+`rightsnip-selection-2026-08-11-16-31-04.png`
 
-\### v0.2 - Drag to Capture
+## Technologies
+- JavaScript
+- Chrome Extension APIs
+- Manifest V3
+- Chrome Context Menus API
+- Chrome Tabs API
+- Chrome Downloads API
+- Chrome Scripting API
+- Clipboard API
+- OffscreenCanvas
 
-\- Added two screenshot options to the browser right-click menu:
-
-&#x20; - `Capture Window` - captures the entire visible browser area
-
-&#x20; - `Drag to Capture` - allows the user to select a specific area
-
-\- Interactive drag-selection overlay
-
-\- Selected area is automatically cropped
-
-\- Cropped screenshot is automatically saved as a PNG
-
-\- Timestamped filenames for captured screenshots
-
-
-
-\## How It Works
-
-
-
-\### Capture Window
-
-Right-click on a webpage and select:
-
-
-
-`Capture Window`
-
-
-
-SnipShot captures the currently visible browser area and saves it as a PNG.
-
-
-
-\### Drag to Capture
-
-Right-click on a webpage and select:
-
-
-
-`Drag to Capture`
-
-
-
-The webpage enters selection mode. Click and drag over the area you want to capture, then release the mouse. SnipShot crops the selected area and saves it as a PNG.
-
-
-
-\## Technologies
-
-\- JavaScript
-
-\- Chrome Extension APIs
-
-\- Manifest V3
-
-\- Chrome Context Menus API
-
-\- Chrome Tabs API
-
-\- Chrome Downloads API
-
-\- Chrome Scripting API
-
-\- OffscreenCanvas
-
-
-
-\## Project Structure
-
-
+## Project Structure
 
 ```text
-
-snipshot/
-
-├── manifest.json
-
+rightsnip/
+├── icons/
+│   └── icon4.png
 ├── background.js
-
 ├── selection.js
-
+├── clipboard.js
+├── manifest.json
 ├── README.md
-
 └── DEVELOPMENT.md
-
