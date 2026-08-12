@@ -1,28 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>RightSnip</title>
+
   <link rel="stylesheet" href="popup.css">
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="popup">
 
-    <h1>RightSnip</h1>
+    <div class="wave wave-one"></div>
+    <div class="wave wave-two"></div>
+    <div class="wave wave-three"></div>
 
-    <label class="setting">
-      <span>Capture Window</span>
-      <input type="checkbox" id="captureWindow">
-    </label>
+    <main class="content">
 
-    <label class="setting">
-      <span>Drag to Capture</span>
-      <input type="checkbox" id="dragCapture">
-    </label>
+      <!-- HEADER -->
+      <header class="header">
+
+        <img
+          src="icons/icon4.png"
+          alt="RightSnip"
+          class="logo"
+        >
+
+        <div>
+          <h1>RightSnip</h1>
+
+          <p class="subtitle">
+            Snip faster. Right from your browser.
+          </p>
+        </div>
+
+      </header>
+
+
+      <!-- SNIP SETTINGS -->
+      <section class="settings-card">
+
+        <p class="section-title">
+          Choose your snip mode
+        </p>
+
+
+        <div class="setting-row">
+
+          <div class="setting-text">
+
+            <span class="setting-name">
+              Right Snip
+            </span>
+
+            <span class="setting-description">
+              Capture the visible webpage
+            </span>
+
+          </div>
+
+
+          <label class="switch">
+
+            <input
+              type="checkbox"
+              id="captureWindow"
+            >
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <div class="setting-row">
+
+          <div class="setting-text">
+
+            <span class="setting-name">
+              Drag Snip
+            </span>
+
+            <span class="setting-description">
+              Select a specific area
+            </span>
+
+          </div>
+
+
+          <label class="switch">
+
+            <input
+              type="checkbox"
+              id="dragCapture"
+            >
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+      </section>
+
+
+      <!-- INFO -->
+      <section class="info-card">
+
+        <div class="info-item">
+
+          <span class="info-icon">
+            ↓
+          </span>
+
+          <div>
+
+            <span class="info-label">
+              Screenshots are saved to
+            </span>
+
+            <span class="info-value">
+              Downloads → RightSnip
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="info-item">
+
+          <span class="info-icon">
+            ⧉
+          </span>
+
+          <div>
+
+            <span class="info-label">
+              Snips are auto-copied
+            </span>
+
+            <span class="info-value">
+              Ready to paste from your clipboard
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <footer>
+        Right-click anywhere on a webpage to start.
+      </footer>
+
+    </main>
 
   </div>
+
 
   <script src="popup.js"></script>
 

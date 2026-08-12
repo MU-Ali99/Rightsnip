@@ -42,8 +42,8 @@ async function buildContextMenu() {
     // BOTH OPTIONS ENABLED
     //
     // RightSnip >
-    //   Capture Window
-    //   Drag to Capture
+    //   Right Snip
+    //   Drag Snip
     // ========================================
 
     if (captureEnabled && dragEnabled) {
@@ -57,14 +57,14 @@ async function buildContextMenu() {
       chrome.contextMenus.create({
         id: "capture-window",
         parentId: "rightsnip-parent",
-        title: "Capture Window",
+        title: "Right Snip",
         contexts: ["page"]
       });
 
       chrome.contextMenus.create({
         id: "drag-capture",
         parentId: "rightsnip-parent",
-        title: "Drag to Capture",
+        title: "Drag Snip",
         contexts: ["page"]
       });
 
@@ -73,14 +73,14 @@ async function buildContextMenu() {
 
 
     // ========================================
-    // ONLY CAPTURE WINDOW ENABLED
+    // ONLY RIGHT SNIP ENABLED
     // ========================================
 
     if (captureEnabled) {
 
       chrome.contextMenus.create({
         id: "capture-window",
-        title: "Capture Window",
+        title: "Right Snip",
         contexts: ["page"]
       });
 
@@ -89,14 +89,14 @@ async function buildContextMenu() {
 
 
     // ========================================
-    // ONLY DRAG TO CAPTURE ENABLED
+    // ONLY DRAG SNIP ENABLED
     // ========================================
 
     if (dragEnabled) {
 
       chrome.contextMenus.create({
         id: "drag-capture",
-        title: "Drag to Capture",
+        title: "Drag Snip",
         contexts: ["page"]
       });
 
@@ -165,7 +165,7 @@ chrome.contextMenus.onClicked.addListener(
 
 
     // ========================================
-    // CAPTURE WINDOW
+    // RIGHT SNIP
     // ========================================
 
     if (info.menuItemId === "capture-window") {
@@ -196,7 +196,7 @@ chrome.contextMenus.onClicked.addListener(
 
 
     // ========================================
-    // DRAG TO CAPTURE
+    // DRAG SNIP
     // ========================================
 
     if (info.menuItemId === "drag-capture") {
@@ -527,7 +527,8 @@ async function downloadScreenshot(
         try {
 
           // Remove ONLY the Chrome download-history
-          // record. The actual PNG remains on disk.
+          // record.
+          // The actual PNG remains on disk.
           await chrome.downloads.erase({
             id: downloadId
           });

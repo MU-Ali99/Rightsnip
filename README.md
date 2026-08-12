@@ -1,39 +1,59 @@
 # RightSnip
 
-RightSnip is a lightweight Chrome extension that lets users capture screenshots directly from the browser's right-click context menu.
+**Snip faster. Right from your browser.**
 
-## Why RightSnip?
-Traditional screenshot tools usually require keyboard shortcuts or opening a separate application.
+RightSnip is a lightweight Chrome extension that brings screenshot tools directly into the browser's right-click menu.
 
-RightSnip brings screenshot controls directly into Chrome's right-click workflow, making captures quick and immediately accessible.
+Capture the visible webpage or select exactly what you want. RightSnip automatically saves the screenshot and copies it to your clipboard.
 
-## Current Features
+## Features
 
-### Capture Window
-- Captures the currently visible webpage
-- Saves the screenshot automatically as a PNG
-- Copies the screenshot directly to the system clipboard
+### Right Snip
 
-### Drag to Capture
-- Adds an interactive selection overlay
-- Lets users drag over a specific area of a webpage
-- Automatically crops the screenshot to the selected region
-- Saves the cropped image as a PNG
-- Copies the cropped image directly to the clipboard
-- Press `Esc` to cancel selection
+Quickly capture the currently visible webpage.
 
-### Capture Mode Settings
-Click the RightSnip extension icon to enable or disable:
-- `Capture Window`
-- `Drag to Capture`
+- Right-click and select `Right Snip`
+- Captures the visible webpage
+- Automatically saves the screenshot as a PNG
+- Automatically copies the screenshot to the clipboard
 
-Context-menu behavior changes automatically:
-- Both enabled → `RightSnip` submenu containing both capture modes
-- Only one enabled → that capture mode appears directly in the right-click menu
-- Both disabled → RightSnip is removed from the right-click menu
+### Drag Snip
 
-### Screenshot Storage
-Screenshots are automatically saved inside:
+Capture a specific part of a webpage.
+
+- Right-click and select `Drag Snip`
+- Drag over the area you want to capture
+- RightSnip automatically crops the selected region
+- Saves the selected area as a PNG
+- Copies the snip directly to the clipboard
+- Press `Esc` to cancel a selection
+
+## Snip Mode Settings
+
+Click the RightSnip extension icon to choose which capture modes appear in your right-click menu.
+
+Available modes:
+
+- `Right Snip`
+- `Drag Snip`
+
+The context menu automatically adapts to your selection.
+
+Both enabled:
+
+`RightSnip → Right Snip / Drag Snip`
+
+Only one enabled:
+
+The selected mode appears directly in the right-click menu.
+
+Both disabled:
+
+RightSnip does not add a capture option to the right-click menu.
+
+## Screenshot Storage
+
+Screenshots are automatically saved to:
 
 `Downloads/RightSnip/`
 
@@ -43,10 +63,37 @@ Example filenames:
 
 `rightsnip-selection-2026-08-11-18-31-04.png`
 
-RightSnip suppresses Chrome's download popup and removes completed RightSnip screenshots from Chrome's download history while keeping the actual PNG files on disk.
+RightSnip suppresses Chrome's download popup and removes completed RightSnip entries from Chrome's download history.
+
+The actual screenshot files remain safely stored inside the RightSnip folder.
+
+## Clipboard
+
+Every completed snip is automatically copied to the system clipboard.
+
+This allows the screenshot to be pasted immediately into compatible applications without manually opening the saved PNG.
+
+## Interface
+
+RightSnip includes a minimal extension popup for managing capture modes.
+
+The v0.5 interface introduces:
+
+- Custom toggle switches
+- Blue layered wave design
+- RightSnip branding
+- Screenshot location guidance
+- Clipboard guidance
+- Century Gothic typography with system-font fallbacks
+- Updated RightSnip icon and visual identity
 
 ## Technologies
+
+RightSnip is currently built using:
+
 - JavaScript
+- HTML
+- CSS
 - Chrome Extension APIs
 - Manifest V3
 - Chrome Context Menus API
@@ -62,7 +109,6 @@ RightSnip suppresses Chrome's download popup and removes completed RightSnip scr
 ```text
 rightsnip/
 ├── icons/
-│   └── icon4.png
 ├── background.js
 ├── selection.js
 ├── clipboard.js

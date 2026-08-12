@@ -1,11 +1,22 @@
+// ==========================================
+// RIGHTSNIP POPUP SETTINGS
+// ==========================================
+
 const captureWindowToggle =
-  document.getElementById("captureWindow");
+  document.getElementById(
+    "captureWindow"
+  );
 
 const dragCaptureToggle =
-  document.getElementById("dragCapture");
+  document.getElementById(
+    "dragCapture"
+  );
 
 
-// Load saved settings
+// ==========================================
+// LOAD SAVED SETTINGS
+// ==========================================
+
 chrome.storage.local.get(
   {
     captureWindowEnabled: true,
@@ -23,7 +34,10 @@ chrome.storage.local.get(
 );
 
 
-// Save Capture Window setting
+// ==========================================
+// RIGHT SNIP TOGGLE
+// ==========================================
+
 captureWindowToggle.addEventListener(
   "change",
   () => {
@@ -37,7 +51,10 @@ captureWindowToggle.addEventListener(
 );
 
 
-// Save Drag to Capture setting
+// ==========================================
+// DRAG SNIP TOGGLE
+// ==========================================
+
 dragCaptureToggle.addEventListener(
   "change",
   () => {
