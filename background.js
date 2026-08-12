@@ -399,6 +399,27 @@ async function handleScreenshot(
   type
 ) {
 
+  // Remember the latest successful screenshot for this
+  // browser session without interrupting save or clipboard.
+  try {
+
+    await chrome.storage.session.set({
+      lastSnip: {
+        dataUrl,
+        type,
+        createdAt: Date.now()
+      }
+    });
+
+  } catch (error) {
+
+    console.error(
+      "Could not remember latest screenshot:",
+      error
+    );
+
+  }
+
   // Save PNG to Downloads/RightSnip
   await downloadScreenshot(
     dataUrl,
