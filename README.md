@@ -1,120 +1,80 @@
-# RightSnip
+<h1 align="left">
+  <img src="icons/iconfour.png" alt="RightSnip icon" width="108" align="absmiddle"> RightSnip
+</h1>
+
+> [!IMPORTANT]
+> **RightSnip has been discontinued.** Its idea grew into [QuickSnip](https://github.com/MU-Ali99/quicksnip-exe), a native Windows screenshot utility that is now the actively developed successor.
 
 **Snip faster. Right from your browser.**
 
-RightSnip is a lightweight Chrome extension that brings screenshot tools directly into the browser's right-click menu.
+RightSnip was a lightweight Chrome extension that put screenshot tools directly in the browser's right-click menu. It could capture the visible page or a selected region, save the result, and copy it to the clipboard.
 
-Capture the visible webpage or select exactly what you want. RightSnip automatically saves the screenshot and copies it to your clipboard.
+## Why RightSnip started
 
-## Features
+RightSnip began with one simple idea: taking a screenshot should be available exactly where the user is already working. Instead of switching applications or remembering a keyboard shortcut, a user could right-click a webpage and choose **Right Snip**. The name combined that right-click interaction with the action of taking a snip.
+
+The first version focused on removing friction from browser capture. **Drag Snip** was later added for selecting a specific region, along with capture-mode settings, automatic downloads, clipboard support, and a small branded popup.
+
+## Why it was discontinued
+
+The extension proved the core workflow, but its browser-only foundation also defined its limits. Continuing to add features would have meant working around Chrome extension boundaries instead of building the broader screenshot tool the project was becoming.
+
+RightSnip was discontinued so development could move to **QuickSnip**, a native Windows application. QuickSnip keeps the original focus on fast capture, copying, and saving, while expanding it beyond a browser tab with desktop capture modes, global hotkeys, configurable output, window capture, and more flexible workflows.
+
+## Limitations of RightSnip
+
+- It worked only inside Chrome and could not capture native desktop applications.
+- A normal capture was limited to the visible browser viewport rather than the entire desktop or a complete scrolling page.
+- Area selection operated within webpage and extension security boundaries.
+- Clipboard and download behavior depended on Chrome permissions and browser policies.
+- It could not provide system-wide hotkeys or integrate deeply with Windows.
+- Features such as focused-window capture, configurable output formats and quality, custom save locations, and advanced automated workflows were outside its original design.
+
+## The evolution into QuickSnip
+
+QuickSnip is not simply a renamed extension. It is the native continuation of the same idea: make screenshot capture fast enough that it does not interrupt the work around it.
+
+The concept evolved like this:
+
+```text
+Right-click browser capture
+        -> selectable browser snips
+        -> faster, configurable capture workflows
+        -> native Windows capture with QuickSnip
+```
+
+For the current project, downloads, and ongoing development, visit:
+
+### [QuickSnip on GitHub](https://github.com/MU-Ali99/quicksnip-exe)
+
+## Original features
 
 ### Right Snip
 
-Quickly capture the currently visible webpage.
-
-- Right-click and select `Right Snip`
-- Captures the visible webpage
-- Automatically saves the screenshot as a PNG
-- Automatically copies the screenshot to the clipboard
+- Captured the visible webpage from Chrome's context menu
+- Automatically saved the screenshot as a PNG
+- Automatically copied the screenshot to the clipboard
 
 ### Drag Snip
 
-Capture a specific part of a webpage.
+- Allowed the user to drag over a specific part of a webpage
+- Cropped and saved the selected region
+- Copied the result directly to the clipboard
+- Supported `Esc` to cancel a selection
 
-- Right-click and select `Drag Snip`
-- Drag over the area you want to capture
-- RightSnip automatically crops the selected region
-- Saves the selected area as a PNG
-- Copies the snip directly to the clipboard
-- Press `Esc` to cancel a selection
+### Capture settings
 
-## Snip Mode Settings
+The extension popup allowed **Right Snip** and **Drag Snip** to be enabled independently. The context menu adapted to show both modes, one direct action, or no capture entry.
 
-Click the RightSnip extension icon to choose which capture modes appear in your right-click menu.
+Screenshots were saved to `Downloads/RightSnip/` and completed RightSnip entries were removed from Chrome's download history without deleting the files.
 
-Available modes:
+## Technology
 
-- `Right Snip`
-- `Drag Snip`
+- JavaScript, HTML, and CSS
+- Chrome Extension Manifest V3
+- Context Menus, Tabs, Downloads, Scripting, Storage, and Clipboard APIs
+- `OffscreenCanvas`
 
-The context menu automatically adapts to your selection.
+## Repository status
 
-Both enabled:
-
-`RightSnip → Right Snip / Drag Snip`
-
-Only one enabled:
-
-The selected mode appears directly in the right-click menu.
-
-Both disabled:
-
-RightSnip does not add a capture option to the right-click menu.
-
-## Screenshot Storage
-
-Screenshots are automatically saved to:
-
-`Downloads/RightSnip/`
-
-Example filenames:
-
-`rightsnip-window-2026-08-11-18-30-20.png`
-
-`rightsnip-selection-2026-08-11-18-31-04.png`
-
-RightSnip suppresses Chrome's download popup and removes completed RightSnip entries from Chrome's download history.
-
-The actual screenshot files remain safely stored inside the RightSnip folder.
-
-## Clipboard
-
-Every completed snip is automatically copied to the system clipboard.
-
-This allows the screenshot to be pasted immediately into compatible applications without manually opening the saved PNG.
-
-## Interface
-
-RightSnip includes a minimal extension popup for managing capture modes.
-
-The v0.5 interface introduces:
-
-- Custom toggle switches
-- Blue layered wave design
-- RightSnip branding
-- Screenshot location guidance
-- Clipboard guidance
-- Century Gothic typography with system-font fallbacks
-- Updated RightSnip icon and visual identity
-
-## Technologies
-
-RightSnip is currently built using:
-
-- JavaScript
-- HTML
-- CSS
-- Chrome Extension APIs
-- Manifest V3
-- Chrome Context Menus API
-- Chrome Tabs API
-- Chrome Downloads API
-- Chrome Scripting API
-- Chrome Storage API
-- Clipboard API
-- OffscreenCanvas
-
-## Project Structure
-
-```text
-rightsnip/
-├── icons/
-├── background.js
-├── selection.js
-├── clipboard.js
-├── popup.html
-├── popup.js
-├── popup.css
-├── manifest.json
-├── README.md
-└── DEVELOPMENT.md
+This repository remains available as an archive of the original extension and the starting point of the idea. It is no longer actively developed or supported.
